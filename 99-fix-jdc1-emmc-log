@@ -1,0 +1,5 @@
+#!/bin/sh
+#JDC1 RE-SP-01B 拆掉eMMC后关闭msdc控制器，消除超时日志
+( echo 0 > /sys/bus/platform/drivers/mtk-msdc/unbind
+echo "1e130000.mmc" > /sys/bus/platform/drivers/mtk-msdc/unbind ) 2>/dev/null &
+exit 0
